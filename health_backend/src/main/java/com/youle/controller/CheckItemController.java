@@ -72,5 +72,18 @@ public class CheckItemController {
             return new Result(false, MessageConstant.QUERY_CHECKITEM_FAIL);
         }
     }
+    @RequestMapping("/findAll")
+    public Result findAll(){
+          List<CheckItem> checkItemList=checkItemService.findAll();
+          if(checkItemList !=null &&checkItemList.size()>0){
+              Result result=new Result(true, MessageConstant.QUERY_CHECKITEM_SUCCESS);
+              result.setData(checkItemList);
+              return result;
+          }
+          return new Result(false,MessageConstant.ADD_CHECKITEM_FAIL);
+    }
+
+
+
 
 }

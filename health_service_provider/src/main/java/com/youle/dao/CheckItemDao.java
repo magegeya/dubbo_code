@@ -2,6 +2,9 @@ package com.youle.dao;
 
 import com.github.pagehelper.Page;
 import com.youle.pojo.CheckItem;
+
+import java.util.List;
+
 /**
         * 持久层Dao接口
         */
@@ -18,4 +21,6 @@ public interface CheckItemDao {
    public void edit(CheckItem checkItem);
 
    public CheckItem findById(Integer checkItemId);
+
+   public List<CheckItem> findAll();
 }
